@@ -252,7 +252,7 @@ while getopts "${optspec}" opt; do
 
         "t")
             # api oath2 authorization token (get your own => https://github.com/settings/tokens/new)
-            [ -z ${auth_token:-} ] && readonly auth_token=`cat ${!OPTIND:-}`
+            [ -z ${auth_token:-} ] && readonly auth_token=${!OPTIND:-}
             (( ++OPTIND ))
             ;;
 
