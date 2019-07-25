@@ -19,4 +19,4 @@ jobs:
 
       - run:
           name: Run git-report.sh
-          command: bash -c "TERM=xterm-256color; echo $TERM" && chmod +x git-report.sh && ./git-report.sh --help
+          command: export TERM=xterm-256color && echo "TERM="${TERM} && chmod +x git-report.sh && ./git-report.sh --help
