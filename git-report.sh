@@ -611,14 +611,14 @@ function normalize_report() {
 }
 
 
-# check for dependancies
-# ${1} = dependancy
-function check_dependancy() {
+# check for dependencies
+# ${1} = dependency
+function check_dependency() {
     if [ ${#} -eq 1 ]; then
-        local dependancy=${1}
+        local dependency=${1}
         local exit_code=${null:-}
 
-        type ${dependancy} &>/dev/null; exit_code=${?}
+        type ${dependency} &>/dev/null; exit_code=${?}
         
         if [ ${exit_code} -ne 0 ]; then
             return 255
@@ -637,18 +637,18 @@ function check_dependancy() {
 ### main program ###
 ####################
 
-# validate dependancies
-readonly -a dependancies=( 'awk' 'dialog' 'git' 'jq' 'logger' 'sed' 'sqlite3' )
-declare -i dependancy=0
+# validate dependencies
+readonly -a dependencies=( 'awk' 'dialog' 'git' 'jq' 'logger' 'sed' 'sqlite3' )
+declare -i dependency=0
 
-while [ "${dependancy}" -lt "${#dependancies[@]}" ]; do
-    check_dependancy ${dependancies[${dependancy}]} || throw_error ${dependancies[${dependancy}]}" required" ${?}
+while [ "${dependency}" -lt "${#dependencies[@]}" ]; do
+    check_dependency ${dependencies[${dependency}]} || throw_error ${dependencies[${dependency}]}" required" ${?}
 
-    (( ++dependancy ))
+    (( ++dependency ))
 
 done
 
-unset dependancy
+unset dependency
 
 
 # make sure we're using least bash 4 for proper support of associative arrays
