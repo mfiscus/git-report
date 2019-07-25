@@ -25,7 +25,7 @@ readonly api_protocol="https"
 readonly tool_name="Git Log Parser"
 
 # get logname
-readonly logname=$( logname )
+readonly logname=$( whoami )
 
 # define fields array
 readonly fields=( "Repository" "Hash" "Committer" "Email" "Date" "Comments" )
