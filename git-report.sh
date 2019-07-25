@@ -642,7 +642,7 @@ readonly -a dependancies=( 'awk' 'dialog' 'git' 'jq' 'logger' 'sed' 'sqlite3' )
 declare -i dependancy=0
 
 while [ "${dependancy}" -lt "${#dependancies[@]}" ]; do
-    check_dependancy ${dependancies[${dependancy}]} || throw_error ${dependancy}" required" ${?}
+    check_dependancy ${dependancies[${dependancy}]} || throw_error ${dependancies[${dependancy}]}" required" ${?}
 
     (( ++dependancy ))
 
