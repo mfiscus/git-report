@@ -57,7 +57,7 @@ function cleanup() {
     # clean up working copy
     [ -a "${working_file:-}" ] && rm -f ${working_file}
     [ -a "${working_db:-}" ] && rm -f ${working_db}
-    dialog --clear
+    clear
 
     return
 
