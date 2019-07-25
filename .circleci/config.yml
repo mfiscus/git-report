@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/Projects/git-report
+
+    docker:
+      - image: circleci/python:latest
+
+    steps:
+      - run:
+          name: Install dependencies
+          command: sudo apt install -y dialog jq sqlite3 syslog-ng
+
+      - checkout
+
+      - run:
+          name: Start syslog-ng
+          command: sudo service syslog-ng start
+
+      - run:
+          name: Run git-report.sh
+          command: chmod +x git-report.sh && ./git-report.sh --help
