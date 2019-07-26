@@ -16,7 +16,7 @@
 
 1. Check out a clone of this repo to your local Projects directory
    ```bash
-   cd ~/Projects && git clone https://github.com/mfiscus/git-report.git
+   cd ~/Projects && git clone https://github.com/mfiscus/git-report.git && cd git-report
    ```
 2. Make script executable
    ```bash
