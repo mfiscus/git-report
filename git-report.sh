@@ -490,6 +490,9 @@ function fetch_repo() {
         # enter project directory
         cd ${projects_path}/${repo_name}
 
+        # switch to master branch
+        git checkout master &>/dev/null
+
         # fetch
         git fetch --all --progress 2>&1 #&>/dev/null
 
