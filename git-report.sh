@@ -64,8 +64,8 @@ function cleanup() {
 }
 
 
-# remove temporary files upon trapping SIGHUP/SIGINT/SIGKILL/SIGTERM/SIGEXIT
-trap cleanup HUP INT KILL TERM EXIT
+# remove temporary files upon trapping SIGHUP/SIGINT/SIGKILL/SIGTERM
+trap cleanup HUP INT KILL TERM
 
 
 # function to catch error messages
